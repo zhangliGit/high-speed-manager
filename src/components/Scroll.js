@@ -13,7 +13,7 @@ export default class Scroll extends React.Component {
   }
   render() {
     return (
-      <div className="co-f1 co-of" ref="wrapper">
+      <div className="co-f1 co-of co-bg-2" ref="wrapper">
         <div>
           { this.props.children }
         </div>

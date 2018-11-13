@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import { homeList } from './home';
+import { ticket } from './ticket'
 
 const RootReducer = combineReducers({
-  homeList
+  ticket
 })
 
 export default RootReducer;

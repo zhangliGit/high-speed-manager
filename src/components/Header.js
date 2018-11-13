@@ -11,17 +11,24 @@ export default class Header extends React.Component {
     this.context.router.history.goBack();
   }
   render() {
+    console.log(this.props);
     return (
       <div id="co-header" className="co-header co-flex co-ac" style = { _styles.headBg }>
         <div className="co-flex co-ac"  style = { _styles.headSlide }>
           <div onClick = { this.backHtml.bind(this)} >
-            <i className = "coicon coicon-return co-fs-3 co-cl-0"></i>
+            {
+              this.props.isBack ? 
+              <i className = "coicon coicon-return co-fs-3 co-cl-0"></i>
+              :
+              ""
+            }
           </div>
         </div>
         <div className="co-cl-0  co-header-title co-tx-c">
           { this.props.title }
         </div>
         <div className="co-flex co-je" style = { _styles.headSlide }>
+        { this.props.children }
         </div>
       </div>
     )

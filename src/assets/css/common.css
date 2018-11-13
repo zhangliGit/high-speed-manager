@@ -1,0 +1,29 @@
+/**设置滚动条样式**/
+.bscroll-vertical-scrollbar {
+  width: 4px !important
+}
+.slide-in {
+  height: 0rem;
+  overflow: hidden;
+}
+.slide-in-enter {
+  height: 0px;
+}
+.slide-in-enter-active {
+}
+.slide-in-enter-done {
+  height: 5rem;
+  transition: all .2s linear;
+}
+
+.slide-in-leave {
+  height: 5rem;
+}
+.slide-in-enter-active {
+  
+}
+.slide-in-leave-done {
+  transition: all .2s linear;
+  height: 0px;
+  overflow: hidden;
+}

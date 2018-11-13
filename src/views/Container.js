@@ -11,7 +11,6 @@ export default class Container extends React.Component {
 
   static childContextTypes = {
     props: PropTypes.object,
-    setTitle: PropTypes.func
   }
 
   constructor(props) {
@@ -23,18 +22,12 @@ export default class Container extends React.Component {
   }
   getChildContext() {
     return {
-      props: { ...this.props },
-      setTitle: () => this.setTitle()
+      props: { ...this.props }
     }
   }
   changePage(index) {
     this.setState({
       currentIndex: index
-    })
-  }
-  setTitle() {
-    this.setState({
-      title: '我改变了'
     })
   }
   render() {
