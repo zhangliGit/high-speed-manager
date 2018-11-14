@@ -4,31 +4,59 @@ import { connect } from 'react-redux'
 import Header from '../../components/Header'
 import { CSSTransition } from 'react-transition-group'
 import { ticketDetail } from '../../store/action/ticket'
+import { Popover, NavBar } from 'antd-mobile'
 
 class TicketList extends React.Component {
 
   constructor() {
     super();
     this.state = {
-      currentIndex: -1
+      currentIndex: -1,
+      dialogTag: false
     }
   }
   componentDidMount() {
     this.props.actions.ticketDetail();
   }
-
+  onSelect(val) {
+    console.log(val);
+    this.setState({
+      dialogTag: false
+    })
+  }
   render() {
     const { detail } = this.props;
     return (
       <div className ="co-f1 co-flex co-ver co-of">
-        <Header title = "火车票详情" isBack>
-          <div>
-            <i className = "coicon coicon-more"></i>
-          </div>
-          <div>
-            212
-          </div>
+        <Header title = "火车票详情" isBack
+          ritBtn = {
+            (
+              <NavBar
+                mode="light"
+                rightContent={
+                  <Popover mask
+                    visible={ this.state.dialogTag }
+                    overlay={[  
+                      (<div onClick = { this.onSelect.bind(this, '32')} key="1" value="scan" className = "co-bd-b" style = {{ padding: ".5rem" }}>收藏车次</div>),
+                      (<div onClick = { this.onSelect.bind(this, '32')} key="2" value="special" className = "co-bd-b" style = {{ padding: ".5rem" }}>解决车牌问题</div>),
+                      (<div onClick = { this.onSelect.bind(this, '32')} key="3" value="special" className = "co-bd-b" style = {{ padding: ".5rem" }}>管家帮我买票</div>),
+                      (<div onClick = { this.onSelect.bind(this, '32')} key="4" value="special" className = "co-bd-b" style = {{ padding: ".5rem" }}>分享车次信息</div>),
+                    ]}
+                  >
+                    <div>
+                      <i className = "coicon coicon-more co-cl-0 co-fs-2"></i>
+                    </div>
+                  </Popover>
+                }
+              >
+              </NavBar>
+            )
+          }
+        >
         </Header>
+        <div>
+        
+        </div>
         <div className = "co-flex co-ac co-pd-a08 co-cl-0" style = {{ background: "rgb(72, 137, 219)"}}>
           <div className = "co-f1">
             <div className = "co-fs-2">{ detail.sCity }</div>
@@ -56,7 +84,7 @@ class TicketList extends React.Component {
                     <div style = {{ width: "6rem" }}>{ item.name }</div>
                     <div className = "co-f1">￥{ item.money }</div>
                     <div className = "co-f1">{ item.number }</div>
-                    <div onClick = { () => { this.setState({ currentIndex: this.state.currentIndex === index ? -1 : index }) }} className = { ` ${index === this.state.currentIndex ? 'co-bg-0 co-cl-7 co-bd-a' : 'co-bg-6'}  co-cl-0 co-fs-01 co-br-a0` }  style = {{ padding: ".3rem .6rem"}}>
+                    <div onClick = { () => { this.setState({ currentIndex: this.state.currentIndex === index ? -1 : index }) }} className = { ` ${index === this.state.currentIndex ? 'co-bg-1 co-cl-7' : 'co-bg-6'}  co-cl-0 co-fs-01 co-br-a0` }  style = {{ padding: ".3rem .6rem"}}>
                         预定
                     </div>
                   </div>

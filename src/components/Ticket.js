@@ -39,7 +39,7 @@ export default class Ticket extends React.Component {
         </div>
         <div className = "co-mg-a04 co-pd-a08 co-bg-0" style = {{ borderRadius: "3px", WebkitBorderRadius: "3px" }}>
           <div className = "co-flex co-jsb co-bd-b co-ac co-pd-b08">
-            <div className = "co-cl-1 co-fs-3">
+            <div className = "co-cl-1 co-fs-3">s
               { this.state.sCity }
             </div>
             <div className = "co-cl-1 co-fs-1">

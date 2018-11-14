@@ -33,13 +33,13 @@ export default class Container extends React.Component {
   render() {
     let type = this.state.currentIndex, currentPage;
     if (type === 0) {
-      currentPage = <Ticket haha = "hah" />
+      currentPage = <Person />
     } else if (type === 1) {
       currentPage = <Trip />
     } else if (type === 2) {
-      currentPage = <Service />
+      currentPage = <Ticket />
     } else {
-      currentPage = <Person />
+      currentPage = <Service />
     }
     return (
       <div className ="co-f1 co-flex co-ver">

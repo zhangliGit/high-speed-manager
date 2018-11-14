@@ -1,4 +1,5 @@
 import React from 'react'
+
 import BScroll from 'better-scroll'
 
 export default class Scroll extends React.Component {
