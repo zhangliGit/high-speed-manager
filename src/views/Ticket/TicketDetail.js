@@ -19,7 +19,6 @@ class TicketList extends React.Component {
     this.props.actions.ticketDetail();
   }
   onSelect(val) {
-    console.log(val);
     this.setState({
       dialogTag: false
     })
@@ -27,7 +26,7 @@ class TicketList extends React.Component {
   render() {
     const { detail } = this.props;
     return (
-      <div className ="co-f1 co-flex co-ver co-of">
+      <div className ="co-flex co-ver co-Page">
         <Header title = "火车票详情" isBack
           ritBtn = {
             (

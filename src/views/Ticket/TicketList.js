@@ -26,7 +26,7 @@ class TicketList extends React.Component {
     ];
     console.log(this.props);
     return (
-      <div className ="co-f1 co-flex co-ver co-of">
+      <div className ="co-flex co-ver co-Page">
         <Header title = "火车票" isBack></Header>
         <div className = "">
           <Tabs 

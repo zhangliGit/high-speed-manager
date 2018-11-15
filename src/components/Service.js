@@ -63,7 +63,7 @@ export default class Service extends React.Component {
                 return (
                   <div key = { index } className = "co-f1 co-flex co-ver co-ac co-jc">
                     <div>
-                      <i className = { `icon iconfont co-fs-4 ${item.icon}`}></i>
+                      <i className = { `icon iconfont co-fs-3 ${item.icon}`}></i>
                     </div>
                     <div className = "co-cl-1 co-mg-t02">{ item.title }</div>
                     <div className = "co-fs-02 co-cl-2 co-mg-t02">{ item.tip }</div>
@@ -81,7 +81,7 @@ export default class Service extends React.Component {
                 return (
                   <div key = { index } className = "co-flex co-ver co-ac co-jc" style = { _styles.tabList }>
                     <div>
-                       <i className = { `icon iconfont co-fs-4 ${item.icon}`}></i>
+                       <i className = { `icon iconfont co-fs-3 ${item.icon}`}></i>
                     </div>
                     <div className = "co-mg-t02 co-cl-1">{item.title}</div>
                   </div>
