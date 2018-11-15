@@ -5,7 +5,7 @@ import TicketList from './Ticket/TicketList'
 import TicketDetail from './Ticket/TicketDetail'
 import { CSSTransition } from 'react-transition-group'
 import store from '../store/index';
-import { HashRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 
 export default class App extends React.Component {
@@ -13,8 +13,7 @@ export default class App extends React.Component {
   render() {
     return (
       <Provider store = { store }>
-        <HashRouter>
-          <div className = "co-Page co-flex co-of">
+        <Router>
             <Switch>
             <CSSTransition
               in = { this.props.match !== null }
@@ -38,8 +37,7 @@ export default class App extends React.Component {
               <Route exact path = "/TicketDetail" component = { TicketDetail } />
             </CSSTransition>
             </Switch>
-          </div>
-        </HashRouter>
+        </Router>
       </Provider>
     )
   }

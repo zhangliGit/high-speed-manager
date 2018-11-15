@@ -30,10 +30,17 @@ export default class Container extends React.Component {
       currentIndex: index
     })
   }
+  getRit() {
+    if (this.state.currentIndex === 1) {
+      return (
+        <i className = "icon iconfont icon-icon-test co-cl-0 co-fs-2"></i>
+      )
+    }
+  }
   render() {
     let type = this.state.currentIndex, currentPage;
     if (type === 0) {
-      currentPage = <Ticket haha = "hah" />
+      currentPage = <Ticket />
     } else if (type === 1) {
       currentPage = <Trip />
     } else if (type === 2) {
@@ -42,8 +49,16 @@ export default class Container extends React.Component {
       currentPage = <Person />
     }
     return (
-      <div className ="co-f1 co-flex co-ver">
-        <Header title = { this.state.title } />
+      <div className ="co-flex co-ver co-Page">
+        {
+          this.state.currentIndex !== 3 ?
+          <Header title = { this.state.title } 
+            ritBtn = { this.getRit() }
+          />
+          :
+          ''
+        }
+        
         <div className = "co-f1 co-bg-0 co-flex">
           { currentPage }
         </div>

@@ -22,12 +22,13 @@ export default class Header extends React.Component {
               ""
             }
           </div>
+          { this.props.lefBtn || '' }
         </div>
         <div className="co-cl-0  co-header-title co-tx-c">
           { this.props.title }
         </div>
         <div className="co-flex co-je" style = { _styles.headSlide }>
-        { this.props.children }
+        { this.props.ritBtn || '' }
         </div>
       </div>
     )

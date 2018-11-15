@@ -27,3 +27,12 @@
   height: 0px;
   overflow: hidden;
 }
+.am-navbar, .am-navbar-light {
+  background-color: transparent !important;
+}
+.am-navbar-right {
+  margin-right: 0 !important;
+}
+.mainBg {
+  background: rgb(72, 137, 219)
+}
