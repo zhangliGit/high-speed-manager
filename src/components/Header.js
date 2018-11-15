@@ -11,7 +11,6 @@ export default class Header extends React.Component {
     this.context.router.history.goBack();
   }
   render() {
-    console.log(this.props);
     return (
       <div id="co-header" className="co-header co-flex co-ac" style = { _styles.headBg }>
         <div className="co-flex co-ac"  style = { _styles.headSlide }>
