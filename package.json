@@ -6,7 +6,7 @@
     "antd-mobile": "^2.2.6",
     "axios": "^0.18.0",
     "better-scroll": "^1.13.2",
-    "corlib": "^1.2.3",
+    "corlib": "^1.2.5",
     "prop-types": "^15.6.2",
     "qs": "^6.5.2",
     "react": "^16.6.1",

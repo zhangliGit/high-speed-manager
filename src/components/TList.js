@@ -1,6 +1,5 @@
 import React from 'react'
-import Scroll from './Scroll'
-
+import Scroll from '../assets/component/Scroll'
 export default class TList extends React.Component {
 
   goDetail(id) {
@@ -13,7 +12,6 @@ export default class TList extends React.Component {
   }
 
   render() {
-    console.log(this.props)
     return (
       <Scroll>
         <div className = "co-pd-a02">
