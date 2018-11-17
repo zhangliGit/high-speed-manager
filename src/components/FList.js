@@ -1,5 +1,5 @@
 import React from 'react'
-import Scroll from './Scroll'
+import Scroll from '../assets/component/Scroll'
 export default class TList extends React.Component {
 
   render() {

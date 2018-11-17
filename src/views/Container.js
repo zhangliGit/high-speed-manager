@@ -1,10 +1,11 @@
 import React from 'react';
-import Header from '../components/Header';
+import Header from '../assets/component/Header';
 import Footer from '../components/Footer';
 import Ticket from '../components/Ticket';
 import Trip from '../components/Trip';
 import Service from '../components/Service';
 import Person from '../components/Person';
+import rcIcon from '../assets/images/rcIcon.png'
 import PropTypes from 'prop-types'
 
 export default class Container extends React.Component {
@@ -26,15 +27,29 @@ export default class Container extends React.Component {
     }
   }
   changePage(index) {
+    let title;
+    switch(index) {
+      case 0 : title = '首页'
+      break
+      case 1: title = '我的行程'
+      break
+      case 2 : title = '旅行服务'
+      break
+      default : title = '首页'
+      break
+    }
     this.setState({
-      currentIndex: index
+      currentIndex: index,
+      title: title
     })
   }
   getRit() {
     if (this.state.currentIndex === 1) {
       return (
-        <i className = "icon iconfont icon-icon-test co-cl-0 co-fs-2"></i>
+          <img src = { rcIcon } alt = "" style = {{ width: "20px", height: "20px", display: "block"}} />
       )
+    } else {
+      return ''
     }
   }
   render() {
@@ -59,7 +74,7 @@ export default class Container extends React.Component {
           ''
         }
         
-        <div className = "co-f1 co-bg-0 co-flex">
+        <div className = "co-f1 co-flex bgCol">
           { currentPage }
         </div>
         <Footer changePage = { this.changePage.bind(this) } />

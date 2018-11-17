@@ -1,8 +1,21 @@
 import React from 'react'
-import Scroll from './Scroll'
+import Scroll from '../assets/component/Scroll'
 import banner from '../assets/images/banner.png'
-import LevelScroll from '../assets/component/LevelScroll'
 import PropTypes from 'prop-types'
+import hljx from '../assets/images/hljx.png'
+import hlzc from '../assets/images/hlzc.png'
+import jp from '../assets/images/jp.png'
+import jd from '../assets/images/jd.png'
+import qcp from '../assets/images/qcp.png'
+import zwd from '../assets/images/zwd.png'
+import hlpc from '../assets/images/hlpc.png'
+import xycx from '../assets/images/xycx.png'
+import dc from '../assets/images/dc.png'
+import home1 from '../assets/images/home1.png'
+import home2 from '../assets/images/home2.png'
+import home3 from '../assets/images/home3.png'
+import home4 from '../assets/images/home4.png'
+import change from '../assets/images/change.png'
 
 export default class Ticket extends React.Component {
   static contextTypes = {
@@ -16,62 +29,42 @@ export default class Ticket extends React.Component {
       eCity: '广州',
       scrollList: [
         {
-          title: '正晚点',
-          icon: 'icon-icon-chujingxianlu'
+          title: '伙力精选',
+          icon: hljx
         },
         {
-          title: '火力拼车',
-          icon: 'icon-icon-chujingxianlu'
+          title: '伙力专车',
+          icon: hlzc
         },
         {
-          title: '信用出行',
-          icon: 'icon-icon-chujingxianlu'
+          title: '机票',
+          icon: jp
         },
         {
-          title: '订餐',
-          icon: 'icon-icon-chujingxianlu'
+          title: '酒店',
+          icon: jd
         },
         {
-          title: '信用出行',
-          icon: 'icon-icon-chujingxianlu'
-        },
-        {
-          title: '订餐',
-          icon: 'icon-icon-chujingxianlu'
-        },
-        {
-          title: '信用出行',
-          icon: 'icon-icon-chujingxianlu'
-        },
-        {
-          title: '订餐',
-          icon: 'icon-icon-chujingxianlu'
-        },
-        {
-          title: '信用出行',
-          icon: 'icon-icon-chujingxianlu'
-        },
-        {
-          title: '订餐',
-          icon: 'icon-icon-chujingxianlu'
+          title: '汽车票',
+          icon: qcp
         }
       ],
       tabList: [
         {
           title: '正晚点',
-          icon: 'icon-icon-chujingxianlu'
+          icon: zwd
         },
         {
           title: '火力拼车',
-          icon: 'icon-icon-chujingxianlu'
+          icon: hlpc
         },
         {
           title: '信用出行',
-          icon: 'icon-icon-chujingxianlu'
+          icon: xycx
         },
         {
           title: '订餐',
-          icon: 'icon-icon-chujingxianlu'
+          icon: dc
         }
       ]
     }
@@ -93,21 +86,21 @@ export default class Ticket extends React.Component {
         <div>
           <img style = { _styles.banner } src = { banner } alt = "" />
         </div>
-        <div className = "co-flex co-pd-tb02 co-bg-0">
-          <LevelScroll>
-            <ul style = { _styles.container }>
-              {
-                this.state.scrollList.map((item, index) => {
-                  return (
-                    <li key = { index } style = { _styles.scrollList } className = "co-flex co-ver co-jc co-ac">
-                      <i className = { `icon iconfont icon-dache co-fs-4 ${item.icon}` }></i>
-                      <div className = "co-fs-01 co-mg-t04 co-tx-c">{ item.title }</div>
-                    </li>
-                  )
-                })
-              }
-            </ul>
-          </LevelScroll>
+        <div className = "co-flex co-pd-tb04 co-bg-0">
+          <ul className = "co-flex" style = {{ width: "100%"}}>
+            {
+              this.state.scrollList.map((item, index) => {
+                return (
+                  <li key = { index } className = "co-flex co-f1 co-ver co-jc co-ac">
+                    <div className = "co-flex co-jc">
+                      <img src = { item.icon } alt = "" style = {{ width: "30px", height: "30px", display: "block"}} />
+                    </div>
+                    <div className = "co-fs-01 co-mg-t04 co-tx-c" style = {{ color: "#666"}}>{ item.title }</div>
+                  </li>
+                )
+              })
+            }
+          </ul>
         </div>
         <div className = "co-mg-a04 co-pd-a08 co-bg-0" style = {{ borderRadius: "3px", WebkitBorderRadius: "3px" }}>
           <div className = "co-flex co-jsb co-bd-b co-ac co-pd-b08">
@@ -115,7 +108,7 @@ export default class Ticket extends React.Component {
               { this.state.sCity }
             </div>
             <div className = "co-cl-1 co-fs-1">
-              <i className = "icon iconfont icon-ziyuanldpi"></i>
+              <img src = { change } alt = ""  style= {{ width: "24px", height: "24px", display: "block"}} />
             </div>
             <div className = "co-cl-1 co-fs-3">
               { this.state.eCity }
@@ -134,13 +127,27 @@ export default class Ticket extends React.Component {
           {
             this.state.tabList.map((item, index) => {
               return (
-                <div key = { index } className = "co-bg-1 co-f1 co-flex co-ver co-ac co-jc co-mg-l04 co-pd-tb04" style = {{ background: "#f5f5f5"}}>
-                  <i className = { `icon iconfont icon-dache co-fs-4 ${item.icon}` }></i>
+                <div key = { index } className = "co-f1 co-flex co-ver co-ac co-jc co-mg-l04 co-pd-tb04" style = {{ background: "#f8fbff"}}>
+                  <div className = "co-flex co-jc">
+                    <img src = { item.icon } alt = "" style = {{ width: "30px", height: "30px", display: "block"}} />
+                  </div>
                   <div className = "co-fs-01 co-mg-t04 co-tx-c">{ item.title }</div>
                 </div>
               )
             })
           }
+        </div>
+        <div className = "co-mg-t04">
+          <img src = { home1 } alt = "" style = { _styles.hImg } />
+        </div>
+        <div className = "co-mg-t04">
+          <img src = { home2 } alt = "" style = { _styles.hImg } />
+        </div>
+        <div className = "co-mg-t04">
+          <img src = { home3 } alt = "" style = { _styles.hImg } />
+        </div>
+        <div className = "co-mg-t04">
+          <img src = { home4 } alt = "" style = { _styles.hImg } />
         </div>
       </Scroll>
     )
@@ -160,5 +167,10 @@ const _styles = {
     width: "100%",
     height: "auto",
     background: "#333"
+  },
+  hImg: {
+    width: "100%",
+    height: "auto",
+    display: "block"
   }
 }

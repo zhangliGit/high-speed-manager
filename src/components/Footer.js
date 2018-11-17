@@ -58,7 +58,8 @@ export default class Footer extends React.Component {
 
 const _styles = {
   autoMenu: {
-    color: "#838383"
+    color: "#838383",
+    background: "#f8f8f8"
   },
   activeMenu: {
     color: "#4889db"

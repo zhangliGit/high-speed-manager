@@ -1,7 +1,7 @@
 import React from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import Header from '../../components/Header'
+import Header from '../../assets/component/Header';
 import TList from '../../components/TList'
 import FList from '../../components/FList'
 import { Tabs } from 'antd-mobile';

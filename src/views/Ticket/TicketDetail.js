@@ -1,7 +1,7 @@
 import React from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import Header from '../../components/Header'
+import Header from '../../assets/component/Header';
 import { CSSTransition } from 'react-transition-group'
 import { ticketDetail } from '../../store/action/ticket'
 import { Popover, NavBar } from 'antd-mobile'

@@ -2186,9 +2186,9 @@ core-util-is@1.0.2, core-util-is@~1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/core-util-is/-/core-util-is-1.0.2.tgz#b5fd54220aa2bc5ab57aab7140c940754503c1a7"
 
-corlib@^1.2.3:
-  version "1.2.3"
-  resolved "https://registry.yarnpkg.com/corlib/-/corlib-1.2.3.tgz#d21a6240de3c42f50a7487514b3d2e1984142600"
+corlib@^1.2.5:
+  version "1.2.5"
+  resolved "https://registry.yarnpkg.com/corlib/-/corlib-1.2.5.tgz#214350737b99485440240bb3dd172dae548a2260"
 
 cosmiconfig@^4.0.0:
   version "4.0.0"
