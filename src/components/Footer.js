@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { CSSTransition } from  'react-transition-group'
 export default class Footer extends React.Component {
 
   constructor(props) {
@@ -42,12 +42,19 @@ export default class Footer extends React.Component {
         {
           this.state.menuList.map((item, index) => {
             return (
-              <div onClick = {this.menuChange.bind(this, index)} key = {item.id} className = "co-f1 co-flex co-ver co-ac co-jc" style = { index === this.state.currentIndex ? _styles.activeMenu: {} }>
-                <div>
-                  <i className = {`icon iconfont ${item.icon} co-fs-3`}></i>
+              <CSSTransition
+                timeout = { 0 }
+                in = { this.state.currentIndex === index }
+                classNames = "scale"
+                key = { index }
+              >
+                <div  onClick = {this.menuChange.bind(this, index)} key = {item.id} className = "co-f1 co-flex co-ver co-ac co-jc" style = { index === this.state.currentIndex ? _styles.activeMenu: {} }>
+                  <div>
+                    <i className = {`icon iconfont ${item.icon} co-fs-3`}></i>
+                  </div>
+                  <div className = { "co-fs-01 co-mg-t02" }>{ item.title }</div>
                 </div>
-                <div className = { "co-fs-01 co-mg-t02" }>{ item.title }</div>
-              </div>
+              </CSSTransition>
             )
           })
         }

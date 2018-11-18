@@ -7,7 +7,7 @@ export default class Scroll extends React.Component {
     setTimeout(() => {
       this.refs.scrollH.style.minHeight = `${(this.refs.wrapper.offsetHeight + 1)}px`;
       this.scroll.refresh();
-    }, 50);
+    }, 100);
     if (!this.scroll) {
       this.scroll = new BScroll(this.refs.wrapper, {
         click: true,

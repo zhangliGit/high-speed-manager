@@ -9,8 +9,6 @@
 .slide-in-enter {
   height: 0px;
 }
-.slide-in-enter-active {
-}
 .slide-in-enter-done {
   height: 5rem;
   transition: all .2s linear;
@@ -18,9 +16,6 @@
 
 .slide-in-leave {
   height: 5rem;
-}
-.slide-in-enter-active {
-  
 }
 .slide-in-leave-done {
   transition: all .2s linear;
@@ -38,4 +33,44 @@
 }
 .bgCol {
   background: "#edf0f5"
+}
+.contanierD {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 9
+}
+.contanier-in {
+  margin: 0
+}
+.contanier-out {
+  margin: 100%
+}
+.imgIcon {
+  width: 5rem;
+  height: 4rem;
+  display: block
+}
+.scale-enter {
+  transform: scale(.8)
+}
+.scale-enter-done {
+  transition: all .3s linear;
+  transform: scale(1)
+}
+.router-trans-enter {
+  left: 100%
+}
+.router-trans-enter-done {
+  transition: all .3s linear;
+  left: 0%
+}
+
+.router-trans-exit {
+  left: 0%
+}
+
+.router-trans-exit-done {
+  transition: all .3s linear;
+  left: 100%
 }

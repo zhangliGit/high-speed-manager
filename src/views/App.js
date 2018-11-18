@@ -4,7 +4,7 @@ import Container from './Container'
 import TicketList from './Ticket/TicketList'
 import TicketDetail from './Ticket/TicketDetail'
 import store from '../store/index';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 
 
 export default class App extends React.Component {

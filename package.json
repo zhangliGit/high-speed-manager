@@ -32,7 +32,11 @@
   "browserslist": [
     ">0.2%",
     "not dead",
-    "not ie <= 11",
-    "not op_mini all"
+    "not op_mini all",
+    "last 2 versions",
+    "not ie <= 8",
+    "iOS >= 6",
+    "Android > 4.1",
+    "Firefox > 20"
   ]
 }

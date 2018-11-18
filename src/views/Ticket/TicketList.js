@@ -58,6 +58,4 @@ function mapDispatchToProps(dispatch) {
   }
 }
 
-TicketList = connect(mapStateToProps, mapDispatchToProps)(TicketList)
-
-export default TicketList;
+export default connect(mapStateToProps, mapDispatchToProps)(TicketList)

@@ -1,11 +1,13 @@
 import React from 'react'
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
+import { newsInfoList } from '../store/action/trip'
 import Scroll from '../assets/component/Scroll'
 import skb from '../assets/images/skb.png'
 import cxdc from '../assets/images/cxdc.png'
 import gtywb from '../assets/images/gtywb.png'
 import czdp from '../assets/images/czdp.png'
-import pic1 from '../assets/images/pic1.png'
-export default class Trip extends React.Component {
+class Trip extends React.Component {
 
   constructor() {
     super();
@@ -31,7 +33,11 @@ export default class Trip extends React.Component {
     }
   }
 
+  componentDidMount() {
+    this.props.actions.newsInfoList();
+  }
   render() {
+    console.log(this.props)
     return (
       <Scroll>
         <div className = "co-flex co-pd-tb08 mainBg co-cl-0">
@@ -49,34 +55,28 @@ export default class Trip extends React.Component {
           }
         </div>
         <div>
-          <div className = "co-flex co-pd-a06 co-bg-0 co-bd-b">
-            <div style = {{width: "5rem", height: "4rem", background: "#444"}}>
-            </div>
-            <div className = "co-f1 co-mg-l06 co-flex co-ver">
-              <div className = "co-te-2 co-cl-1">6条高铁已经被开通了，您以后的行程将会非常的方便哈哈</div>
-              <div className = "co-f1 co-flex co-ac co-cl-2 co-fs-01">快来看看您的家乡会怎么样</div>
-              <div className = "co-flex co-jsb co-fs-01">
-                <div>干货</div>
-                <div>21920</div>
-              </div>
-            </div>
-          </div>
-          <div className = "co-flex co-pd-a06 co-bg-0 co-bd-b">
-            <div >
-              <img src = { pic1 } style = {{width: "5rem", height: "4rem", background: "#444"}}  alt = "" />
-            </div>
-            <div className = "co-f1 co-mg-l06 co-flex co-ver">
-              <div className = "co-te-2" style = {{ color: "#333"}}>6条高铁已经被开通了，您以后的行程将会非常的方便哈哈</div>
-              <div className = "co-f1 co-flex co-ac co-cl-2 co-fs-01">快来看看您的家乡会怎么样</div>
-              <div className = "co-flex co-jsb co-ac co-fs-01">
-                <div style = { _styles.tip }>干货</div>
-                <div className = "co-flex co-ac" style = {{ color: "#c3c3c3"}}>
-                  <div  style = {{}}><i className = "icon iconfont icon-yanjing"></i></div>
-                  <div style = {{ margin: "3px 3px 0"}}>1990</div>
+          {
+            this.props.list.map((item, index) => {
+              return (
+                <div key = { index } className = "co-flex co-pd-a06 co-bg-0 co-bd-b co-of">
+                  <div >
+                    <img src = { item.picUrl } style = {{width: "5rem", height: "4rem", background: "#444"}}  alt = "" />
+                  </div>
+                  <div className = "co-f1 co-mg-l06 co-flex co-ver co-jsb">
+                    <div className = "co-te2" style = {{ color: "#333" }}>{ item.title }</div>
+                    <div className = "co-flex co-te co-ac co-cl-2 co-fs-01">{ item.levelTitle }</div>
+                    <div className = "co-flex co-jsb co-ac co-fs-01">
+                      <div style = { _styles.tip }>{ item.type }</div>
+                      <div className = "co-flex co-ac" style = {{ color: "#c3c3c3"}}>
+                        <div  style = {{}}><i className = "icon iconfont icon-yanjing co-fs-1"></i></div>
+                        <div style = {{ margin: "3px 3px 0"}}>{ item.watch }</div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-          </div>
+              )
+            })
+          }
         </div>
       </Scroll>
     )
@@ -95,3 +95,16 @@ const _styles = {
     transform: "scale(.9)"
   }
 }
+const mapStateToProps = (state) => {
+  return {
+    list: state.trip
+  }
+}
+
+const mapDispathToProps = (dispatch) => {
+  return {
+    actions: bindActionCreators({newsInfoList}, dispatch)
+  }
+}
+
+export default connect(mapStateToProps, mapDispathToProps)(Trip)

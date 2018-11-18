@@ -6,7 +6,10 @@ export default class Header extends React.Component {
   static contextTypes = {
     router: PropTypes.object.isRequired
   }
-
+  constructor(props, context) {
+    super(props, context);
+    console.log(context.router);
+  }
   backHtml() {
     this.context.router.history.goBack();
   }

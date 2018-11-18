@@ -26,6 +26,9 @@ export default class Container extends React.Component {
       props: { ...this.props }
     }
   }
+  componentDidMount() {
+    this.refs.person.style.height = `${window.screen.height - this.refs.footer.offsetHeight}px`
+  }
   changePage(index) {
     let title;
     switch(index) {
@@ -34,6 +37,8 @@ export default class Container extends React.Component {
       case 1: title = '我的行程'
       break
       case 2 : title = '旅行服务'
+      break
+      case 3:
       break
       default : title = '首页'
       break
@@ -53,16 +58,8 @@ export default class Container extends React.Component {
     }
   }
   render() {
-    let type = this.state.currentIndex, currentPage;
-    if (type === 0) {
-      currentPage = <Ticket />
-    } else if (type === 1) {
-      currentPage = <Trip />
-    } else if (type === 2) {
-      currentPage = <Service />
-    } else {
-      currentPage = <Person />
-    }
+    let type = this.state.currentIndex;
+    const comList = [<Ticket />, <Trip  />, <Service  />, <Person  />]
     return (
       <div className ="co-flex co-ver co-Page">
         {
@@ -73,11 +70,18 @@ export default class Container extends React.Component {
           :
           ''
         }
-        
         <div className = "co-f1 co-flex bgCol">
-          { currentPage }
+          {
+            comList.map((item, index) => {
+              return (
+                <div key = { index } ref = { index === 3 ? "person" : "" } className = { `co-flex contanierD ${type === index ? "contanier-in" : "contanier-out"}`} >{ item }</div>
+              )
+            })
+          }
         </div>
-        <Footer changePage = { this.changePage.bind(this) } />
+        <div ref = "footer">
+          <Footer changePage = { this.changePage.bind(this) } />
+        </div>
       </div>
     )
   }

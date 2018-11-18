@@ -1,4 +1,4 @@
-import { TICKET_LIST, TICKET_DETAIL} from '../action/ticket'
+import { TICKET_LIST, TICKET_DETAIL } from '../action/ticket'
 
 
 /**
