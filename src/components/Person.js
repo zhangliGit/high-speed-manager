@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types'
 import Scroll from '../assets/component/Scroll';
 import s1 from '../assets/images/s1.png';
 import qbIcon from '../assets/images/qbIcon.png';
@@ -20,25 +21,32 @@ import personIcon from '../assets/images/personIcon.png';
 
 export default class Person extends React.Component {
 
+  static contextTypes = {
+    router: PropTypes.object.isRequired
+  }
   constructor() {
     super();
     this.state = {
       menuList: [
         {
           title: '钱包',
-          icon: qbIcon
+          icon: qbIcon,
+          path: '/riderList'
         },
         {
           title: '乘车人',
-          icon: ccrIcon
+          icon: ccrIcon,
+          path: '/riderList'
         },
         {
           title: '我的点评',
-          icon: wddpIcon
+          icon: wddpIcon,
+          path: '/riderList'
         },
         {
           title: '好友',
-          icon: hyIcon
+          icon: hyIcon,
+          path: '/riderList'
         }
       ],
       orderList: [
@@ -87,6 +95,10 @@ export default class Person extends React.Component {
       ]
     }
   }
+
+  goMenu (path) {
+    this.context.router.history.push(path);
+  }
   render() {
     return (
       <Scroll>
@@ -124,7 +136,7 @@ export default class Person extends React.Component {
           {
             this.state.menuList.map((item, index) => {
               return (
-                <div key = { index } className = "co-f1 co-flex co-ver co-ac co-jc">
+                <div onClick = { this.goMenu.bind(this, item.path)} key = { index } className = "co-f1 co-flex co-ver co-ac co-jc">
                   <div>
                     <img src = { item.icon } style = {{width: "32px", height: "32px", display: "block"}}  alt = "" />
                   </div>
@@ -184,7 +196,6 @@ export default class Person extends React.Component {
                 )
               })
             }
-            
           </div>
         </div>
       </Scroll>

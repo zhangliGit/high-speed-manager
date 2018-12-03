@@ -5,12 +5,16 @@ import Header from '../../assets/component/Header';
 import TList from '../../components/TList'
 import FList from '../../components/FList'
 import { Tabs } from 'antd-mobile';
+import PropTyps from 'prop-types';
 import { ticketList } from '../../store/action/ticket'
 
 class TicketList extends React.Component {
-
-  constructor() {
+  static contextTypes = {
+    router: PropTyps.object.isRequired
+  }
+  constructor(props, context) {
     super();
+    console.log(context);
     this.state = {
       currentIndex: 0
     }
@@ -24,7 +28,6 @@ class TicketList extends React.Component {
       { title: '火车票' },
       { title: '飞机票' },
     ];
-    console.log(this.props);
     return (
       <div className ="co-flex co-ver co-Page">
         <Header title = "火车票" isBack></Header>

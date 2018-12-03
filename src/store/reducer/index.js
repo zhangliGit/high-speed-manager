@@ -1,9 +1,11 @@
 import { combineReducers } from 'redux';
 import { ticket } from './ticket'
 import { trip } from './trip'
+import { person } from './person'
 const RootReducer = combineReducers({
   ticket,
-  trip
+  trip,
+  person
 })
 
 export default RootReducer;

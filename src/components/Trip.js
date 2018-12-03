@@ -59,7 +59,7 @@ class Trip extends React.Component {
             this.props.list.map((item, index) => {
               return (
                 <div key = { index } className = "co-flex co-pd-a06 co-bg-0 co-bd-b co-of">
-                  <div >
+                  <div>
                     <img src = { item.picUrl } style = {{width: "5rem", height: "4rem", background: "#444"}}  alt = "" />
                   </div>
                   <div className = "co-f1 co-mg-l06 co-flex co-ver co-jsb">

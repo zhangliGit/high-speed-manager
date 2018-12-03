@@ -10,20 +10,34 @@ import PropTypes from 'prop-types'
 
 export default class Container extends React.Component {
 
+   // 申明context类型
+   // 需要传递的变量需要在这里定义，否则会报错
   static childContextTypes = {
     props: PropTypes.object,
+    name: PropTypes.string,
+    getName: PropTypes.func,
+    arrList: PropTypes.array
   }
 
-  constructor(props) {
-    super(props);
+  constructor(props, context) {
+    super(props, context);
+    console.log('---');
+    console.log(props, context);
+    console.log('---');
     this.state = {
       currentIndex: 0,
       title: '首页'
     }
   }
+  // 定义context需要实现的方法
   getChildContext() {
     return {
-      props: { ...this.props }
+      props: { ...this.props },
+      name: 'zhangli',
+      getName: () => {
+        return 'haha'
+      },
+      arrList: [1,2,3]
     }
   }
   componentDidMount() {
@@ -59,7 +73,7 @@ export default class Container extends React.Component {
   }
   render() {
     let type = this.state.currentIndex;
-    const comList = [<Ticket />, <Trip  />, <Service  />, <Person  />]
+    const comList = [<Ticket { ...this.state } />, <Trip  />, <Service  />, <Person  />]
     return (
       <div className ="co-flex co-ver co-Page">
         {

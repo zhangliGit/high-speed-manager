@@ -20,10 +20,18 @@ import change from '../assets/images/change.png'
 export default class Ticket extends React.Component {
   static contextTypes = {
     props: PropTypes.object.isRequired,
+    name: PropTypes.string,
+    arrList: PropTypes.array,
+    getName: PropTypes.func,
+    router: PropTypes.object.isRequired,
   }
 
-  constructor() {
-    super();
+  constructor(props, context) {
+    super(props, context);
+    console.log('+++');
+    console.log(props);
+    console.log(context);
+    console.log('+++');
     this.state = {
       sCity: '武汉',
       eCity: '广州',
@@ -71,7 +79,7 @@ export default class Ticket extends React.Component {
   }
 
   ticketList() {
-    this.context.props.history.push({
+    this.context.router.history.push({
       pathname: '/TicketList',
       state: {
         startTime: '',
@@ -79,11 +87,13 @@ export default class Ticket extends React.Component {
       }
     })
   }
-
+  down() {
+    console.log(2)
+  }
   render() {
     return (
       <Scroll>
-        <div>
+        <div onClick = { this.down.bind(this) }>
           <img style = { _styles.banner } src = { banner } alt = "" />
         </div>
         <div className = "co-flex co-pd-tb04 co-bg-0">

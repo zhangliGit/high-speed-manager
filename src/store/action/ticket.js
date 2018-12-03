@@ -13,12 +13,12 @@ const ticketListActions = (data) => ({
   list: data
 });
 export const ticketList = () => {
-  return (dispatch) => {
-    $ajax({
+  return async (dispatch) => {
+    const params = {
       url: apiList.ticketList
-    }).then(data => {
-       dispatch(ticketListActions(data.data))
-    })
+    }
+    let data = await $ajax.get(params);
+    dispatch(ticketListActions(data.data));
   }
 }
 
@@ -33,11 +33,11 @@ const ticketDetailActions = (data) => {
   }
 }
 export const ticketDetail = () => {
-  return (dispatch) => {
-    $ajax({
+  return async (dispatch) => {
+    const params = {
       url: apiList.ticketDetail
-    }).then(data => {
-       dispatch(ticketDetailActions(data.data))
-    })
+    }
+    let data = await $ajax.get(params);
+    dispatch(ticketDetailActions(data.data));
   }
 }
