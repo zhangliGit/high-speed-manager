@@ -1,0 +1,10 @@
+.am-list-item {
+  min-height: auto;
+}
+.am-list-item .am-list-line {
+  padding-right: 0px;
+}
+.am-list-item .am-list-line .am-list-extra {
+  flex-basis: 100% !important;
+  font-size: .75rem
+}

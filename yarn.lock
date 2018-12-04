@@ -1023,6 +1023,10 @@ ansi-styles@^3.2.0, ansi-styles@^3.2.1:
   dependencies:
     color-convert "^1.9.0"
 
+antd-mobile-demo-data@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/antd-mobile-demo-data/-/antd-mobile-demo-data-0.2.0.tgz#049731dc3c48c42603185e4338724879224c8442"
+
 antd-mobile@^2.2.6:
   version "2.2.6"
   resolved "https://registry.yarnpkg.com/antd-mobile/-/antd-mobile-2.2.6.tgz#05c4aea76bfc7219949558fafc6abbfe53864f98"

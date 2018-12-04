@@ -63,8 +63,8 @@ class Trip extends React.Component {
                     <img src = { item.picUrl } style = {{width: "5rem", height: "4rem", background: "#444"}}  alt = "" />
                   </div>
                   <div className = "co-f1 co-mg-l06 co-flex co-ver co-jsb">
-                    <div className = "co-te2" style = {{ color: "#333" }}>{ item.title }</div>
-                    <div className = "co-flex co-te co-ac co-cl-2 co-fs-01">{ item.levelTitle }</div>
+                    <div className = "co-te2" style = {{ color: "#333", webkitBoxOrient: 'vertical', boxOrient: 'vertical' }}>{ item.title }</div>
+                    <div className = "co-flex co-te co-ac co-cl-2 co-fs-01" style = {{ WebkitBoxOrient: 'vertical', boxOrient: 'vertical' }}>{ item.levelTitle }</div>
                     <div className = "co-flex co-jsb co-ac co-fs-01">
                       <div style = { _styles.tip }>{ item.type }</div>
                       <div className = "co-flex co-ac" style = {{ color: "#c3c3c3"}}>
