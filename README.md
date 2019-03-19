@@ -1,6 +1,6 @@
 ### 仿高铁管家app主模块应用
 
-**基于react+react-router+redux+antd-mobile+es6+axios等技术栈开发，可供react初学真参考**
+**基于react+react-router+redux+antd-mobile+es6+axios等技术栈开发，可供react初学者参考**
 
 
 ```
