@@ -62,13 +62,19 @@ export default class Container extends React.Component {
       title: title
     })
   }
+  goDemo () {
+    console.log(this.props)
+    this.props.history.push('/Demo')
+  }
   getRit() {
     if (this.state.currentIndex === 1) {
       return (
           <img src = { rcIcon } alt = "" style = {{ width: "20px", height: "20px", display: "block"}} />
       )
-    } else {
-      return ''
+    } else if (this.state.currentIndex === 0) {
+      return (
+        <span onClick = {() => this.goDemo()}>示例</span>
+      )
     }
   }
   render() {

@@ -6,6 +6,11 @@ import store from '../store/index';
 import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 
 /**
+ * demo
+ */
+const Demo = asyncComponent(() => require('./Demo'));
+
+/**
  * 车牌预定
  */
 const TicketList = asyncComponent(() => require("./Ticket/TicketList"));
@@ -25,6 +30,7 @@ export default class App extends React.Component {
           <Switch>
             <Route exact path = "/" component = { Container } />
             <Route exact path = "/TicketList" component = { TicketList } />
+            <Route exact path = "/Demo" component = { Demo } />
             <Route exact path = "/TicketDetail" component = { TicketDetail } />
             <Route exact path = "/RiderList" component = { RiderList } />
             <Route exact path = "/AddRider" component = { AddRider } />
